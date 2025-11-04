@@ -14,10 +14,9 @@ return new class extends Migration
         Schema::create('movimentacaos', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('produto_id')->unsigned()->nullable(false);
-            $table->string('nome', 100)->nullable(false);
-            $table->string('tipo')->nullable(false);
+            $table->boolean('tipo')->default(true);
             $table->integer('quantidade')->nullable(false); 
-            $table->string('data_movimentacao')->nullable(false);
+            $table->string('data_movimentacao')->nullable(false)->default(now());
             $table->foreign('produto_id')->references('id')->on('produtos');
             $table->timestamps();
         });

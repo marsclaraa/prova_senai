@@ -31,9 +31,8 @@ class Cadastro extends Component
             'quantidade'=>$this->quantidade,
             'quantidade_minima'=>$this->quantidade_minima
         ]);
+            session()->flash('succes', 'Cadastro Realizado');
     }
-
-    session()->flash('succes', 'Cadastro Realizado');
 
     public function render()
     {
